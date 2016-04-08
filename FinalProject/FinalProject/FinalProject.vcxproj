@@ -65,10 +65,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="functions.h" />
+    <ClInclude Include="TrafficLight.h" />
     <ClInclude Include="Place.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="functions.cpp" />
+    <ClCompile Include="TrafficLight.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Place.cpp" />
   </ItemGroup>

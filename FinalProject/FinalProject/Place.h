@@ -13,16 +13,15 @@ using namespace std;
 class Place
 {
 public:
+	//Loads in the contents of Place.txt to the map vector
 	Place();
 
-
+	//Prints out the map after it's been loaded in
 	void printMap();
 
-	vector<vector<int> >* returnMap();
-
+	//Returns a given part of the map as an int
 	int returnPlace(int x, int y);
 
 private:
 	vector<vector<int> > map;
-	//int map[25][80];
 };

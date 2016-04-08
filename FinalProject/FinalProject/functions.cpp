@@ -23,8 +23,17 @@ void coutc(int color, int output)
 	cout << output;
 	SetConsoleTextAttribute(handle, color);
 }
-//prints character based on ASCII code 
+//prints character based on ASCII code with background colour of grey 
 void coutchar(int color, int output)
+{
+	HANDLE handle = GetStdHandle(STD_OUTPUT_HANDLE);
+	SetConsoleTextAttribute(handle, color + (8*16));
+	cout << char(output);
+	SetConsoleTextAttribute(handle, color);
+}
+
+//prints character based on ASCII code with background colour of black
+void coutcharbl(int color, int output)
 {
 	HANDLE handle = GetStdHandle(STD_OUTPUT_HANDLE);
 	SetConsoleTextAttribute(handle, color);
