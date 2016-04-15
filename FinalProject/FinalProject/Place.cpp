@@ -1,10 +1,12 @@
 #include "Place.h"
 
+Place::world Place::map;
+
 //Loads in the contents of Place.txt to the map vector
 Place::Place()
 {
 	//Sets the map vector to be a 25 by 80 array
-	map.resize(25, vector<int>(80, 0));
+	map.resize(30, vector<int>(85, 0));
 
 	//Opens the Place.txt file and loads in the contents to map
 	ifstream load("Place.txt");

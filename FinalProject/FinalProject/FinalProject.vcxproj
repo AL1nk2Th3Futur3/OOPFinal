@@ -64,15 +64,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Car.h" />
     <ClInclude Include="functions.h" />
     <ClInclude Include="TrafficLight.h" />
     <ClInclude Include="Place.h" />
+    <ClInclude Include="Vehicle.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Car.cpp" />
     <ClCompile Include="functions.cpp" />
     <ClCompile Include="TrafficLight.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Place.cpp" />
+    <ClCompile Include="Vehicle.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

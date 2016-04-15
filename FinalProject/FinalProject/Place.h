@@ -9,6 +9,7 @@ using namespace std;
 #include "functions.h"
 #include <fstream>
 #include <vector>
+//#include "TrafficLight.h"
 
 class Place
 {
@@ -20,8 +21,11 @@ public:
 	void printMap();
 
 	//Returns a given part of the map as an int
-	int returnPlace(int x, int y);
+	static int returnPlace(int x, int y);
 
+	typedef vector<vector<int> > world;
+	static world map;
+	//friend TrafficLight;
 private:
-	vector<vector<int> > map;
+	
 };
