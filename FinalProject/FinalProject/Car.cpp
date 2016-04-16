@@ -9,8 +9,11 @@ Car::Car()
 	2 - North
 	3 - South
 	*/
+	colour = rand() % 16;
+	if (colour == 8)
+		colour = 15;
+
 	dir = rand() % 4;
-	//dir = i;
 	if (dir == 0)
 		count = 2;
 	else if (dir == 1)
@@ -26,32 +29,23 @@ Car::~Car()
 	delete this;
 }
 
-void Car::test()
-{
-	cout << dir << endl;
-}
 
-void Car::deleteThis()
+void Car::updateVehicle()
 {
-	delete this;
-}
-
-void Car::updateCar()
-{
-	if (dir == 0)
+	if (dir == 0 && count != 81)
 	{
 		if (TrafficLight::getPlace(count + 1, 14) != 219)
 		{
 			if (count < 80)
 			{
 				gotoxy(count, 14);
-				coutchar(15, 219);
+				coutchar(colour, 219);
 				TrafficLight::setPlace(count, 14, 219);
 				gotoxy(count - 1, 14);
-				coutchar(15, 219);
+				coutchar(colour, 219);
 				TrafficLight::setPlace(count - 1, 14, 219);
 				gotoxy(count - 2, 14);
-				coutchar(15, 219);
+				coutchar(colour, 219);
 				TrafficLight::setPlace(count - 2, 14, 219);
 
 			}
@@ -77,23 +71,23 @@ void Car::updateCar()
 		}
 
 	}
-	else if (dir == 1)
+	else if (dir == 1 && count != 3)
 	{
 		if (TrafficLight::getPlace(count - 4, 10) != 219)
 		{
 			if (count > 3)
 			{
 				/*gotoxy(count, 10);
-				coutchar(15, 219);
+				coutchar(colour, 219);
 				TrafficLight::setPlace(count, 10, 219);*/
 				gotoxy(count - 1, 10);
-				coutchar(15, 219);
+				coutchar(colour, 219);
 				TrafficLight::setPlace(count - 1, 10, 219);
 				gotoxy(count - 2, 10);
-				coutchar(15, 219);
+				coutchar(colour, 219);
 				TrafficLight::setPlace(count - 2, 10, 219);
 				gotoxy(count - 3, 10);
-				coutchar(15, 219);
+				coutchar(colour, 219);
 				TrafficLight::setPlace(count - 3, 10, 219);
 
 			}
@@ -117,22 +111,22 @@ void Car::updateCar()
 
 			}
 
-			if (count > 4)
+			if (count >= 4)
 				count--;
 
 		}
 	}
-	else if (dir == 2)
+	else if (dir == 2 && count != 25)
 	{
 		if (TrafficLight::getPlace(36, count + 1) != 219)
 		{
 			if (count < 25)
 			{
 				gotoxy(36, count);
-				coutchar(15, 219);
+				coutchar(colour, 219);
 				TrafficLight::setPlace(36, count, 219);
 				gotoxy(36, count - 1);
-				coutchar(15, 219);
+				coutchar(colour, 219);
 				TrafficLight::setPlace(36, count - 1, 219);
 
 
@@ -160,14 +154,14 @@ void Car::updateCar()
 
 		}
 	}
-	else if (dir == 3)
+	else if (dir == 3 && count != 1)
 	{
 		if (TrafficLight::getPlace(44, count - 1 ) != 219)
 		{
 			if (count >= 1)
 			{
 				gotoxy(44, count);
-				coutchar(15, 219);
+				coutchar(colour, 219);
 				TrafficLight::setPlace(44, count, 219);
 
 				if (count != 1)
@@ -202,34 +196,3 @@ void Car::updateCar()
 	}
 }
 
-//void Car::moveRight(int count)
-//{
-//	try
-//	{
-//		if (Place::map[14][count] == 255)
-//		{
-//			
-//				gotoxy(count, 14);
-//				coutchar(15, 219);
-//				gotoxy(count - 1, 14);
-//				coutchar(15, 219);
-//				gotoxy(count - 2, 14);
-//				coutchar(15, 219);
-//
-//				if (count > 2)
-//				{
-//					gotoxy(count - 3, 14);
-//					coutchar(0, Place::map[14][count - 3]);
-//				}
-//			
-//			
-//		}
-//		else if (Place::map[14][count] == 219)
-//		{
-//
-//		}
-//	}
-//	catch (...)
-//	{
-//	}
-//}

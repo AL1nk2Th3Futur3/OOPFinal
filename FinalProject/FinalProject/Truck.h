@@ -1,5 +1,4 @@
 #pragma once
-
 #include <iostream>
 #include <iomanip>
 #include <cmath>
@@ -8,11 +7,20 @@
 using namespace std;
 #include <windows.h>
 #include "functions.h"
+#include "Vehicle.h"
+#include <fstream>
 #include <vector>
 
-class Vehicle
+class Truck : public Vehicle
 {
 public:
-	virtual void updateVehicle() = 0; 
 
+	Truck();
+	~Truck();
+	virtual void updateVehicle();
+
+private:
+	int dir;
+	int count;
+	int colour;
 };

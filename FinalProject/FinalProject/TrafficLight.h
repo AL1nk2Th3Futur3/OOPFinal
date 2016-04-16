@@ -10,7 +10,6 @@ using namespace std;
 #include "functions.h"
 #include "Place.h"
 #include <vector>
-//#include "Vehicle.h"
 
 class TrafficLight
 {

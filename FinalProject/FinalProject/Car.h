@@ -1,24 +1,22 @@
 #pragma once
 
-//#include "Vehicle.h"
+#include "Vehicle.h"
 #include "TrafficLight.h"
 
-class Car
+class Car : public Vehicle
 {
 public:
 
 	Car();
 	~Car();
 
-//	void moveCar();
 
-	void deleteThis();
+	virtual void updateVehicle();
 
-	void test();
 
-	void updateCar();
 private:
 	int dir;
 	int count;
+	int colour;
 
 };
